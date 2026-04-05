@@ -1,0 +1,21 @@
+[build-system]
+requires = ["maturin>=1.5,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "shmdict-win"
+version = "0.1.0"
+description = "Windows shared-memory multi-process dictionary (String -> i64), lock-free style (atomic + seqlock), PyO3 extension"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [{ name = "your_name" }]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Rust",
+  "Operating System :: Microsoft :: Windows",
+  "License :: OSI Approved :: MIT License",
+]
+
+[tool.maturin]
+bindings = "pyo3"
+module-name = "shmdict"

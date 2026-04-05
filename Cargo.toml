@@ -1,0 +1,23 @@
+[package]
+name = "shmdict"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "shmdict"
+crate-type = ["cdylib"]
+
+
+[dependencies]
+pyo3 = { version = "0.21", features = ["extension-module", "abi3-py38"] }
+windows-sys = { version = "0.59", features = [
+  "Win32_Foundation",
+  "Win32_System_Memory",
+  "Win32_Security"
+] }
+
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
